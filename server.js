@@ -1,12 +1,12 @@
 //grab our dependencies
 const express = require('express');
-
 const app = express();
+const port = process.env.PORT || 8080;
+const expressLayouts = require('express-ejs-layouts');
+const mongoose = require('mongoose');
 
-port = process.env.PORT || 8080;
-expressLayouts = require('express-ejs-layouts');
 
-//configure our application
+//configure our application =============================
 //tell express where to look for static assets
 app.use(express.static(__dirname + '/public'))
 
@@ -14,7 +14,11 @@ app.use(express.static(__dirname + '/public'))
 app.set('view engine', 'ejs');
 app.use(expressLayouts);
 
-//set the routes
+//connect to our database
+mongoose.connect('mongodb://footbaldb:passworddb@ds153778.mlab.com:53778/football');
+
+
+//set the routes=========================================
 app.use( require('./app/routes'));
 
 //start our server
