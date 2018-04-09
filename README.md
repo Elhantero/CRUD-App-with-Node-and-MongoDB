@@ -1,9 +1,7 @@
 # CRUD-App-with-Node-and-MongoDB
 
-# npm install
+1. npm install
 
-# nodemon server
+2. nodemon server
 
-# http://localhost:8080/
-
-
+3. http://localhost:8080/
