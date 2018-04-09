@@ -18,16 +18,8 @@ eventSchema.pre('save', function(next){
     next();
 })
 
-
-
-
 //create the model=========================
 const eventModel = mongoose.model('Event', eventSchema);
-
-
-//export the model=========================
-module.exports = eventModel;
-
 
 //function to slugify a name
 function slugify(text){
@@ -38,3 +30,6 @@ function slugify(text){
     .replace(/^-+/, '')             // Trim - from start of text
     .replace(/-+$/, '');            // Trim - from end of text
 };
+
+//export the model=========================
+module.exports = eventModel;
